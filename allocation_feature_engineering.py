@@ -633,3 +633,105 @@ def save_feature_config(config: FeatureConfig, path: str | Path) -> None:
 
 def load_feature_config(path: str | Path) -> FeatureConfig:
     return FeatureConfig.from_dict(json.loads(Path(path).read_text()))
+
+# -----------------------------------------------------------------------------
+# Workbook/table detection helper used by the Streamlit app
+# -----------------------------------------------------------------------------
+
+def _header_match_count(values: Iterable[object]) -> int:
+    """Count how many cells in a possible header row map to approved columns."""
+    wanted = set(APPROVED_COLUMNS + [TARGET_COLUMN])
+    hits = 0
+    seen = set()
+    for v in values:
+        canon = COLUMN_ALIASES.get(_alias_key(v))
+        if canon in wanted and canon not in seen:
+            hits += 1
+            seen.add(canon)
+    return hits
+
+
+def _row_is_repeated_header(row: pd.Series) -> bool:
+    """Identify repeated header rows that can appear inside exported workbooks."""
+    vals = row.tolist()
+    return _header_match_count(vals) >= 6
+
+
+def detect_header_and_table(raw: pd.DataFrame, min_header_hits: int = 6, max_scan_rows: int = 120) -> pd.DataFrame:
+    """Detect the allocation working-table header and return a clean table DataFrame.
+
+    Streamlit may read Excel sheets with ``header=None`` so the true header is one
+    of the first rows, or it may read CSV/XLSX files that already have headers.
+    This function supports both cases:
+
+    1. If the current DataFrame columns already look like the allocation table
+       header, it simply normalizes and coalesces those columns.
+    2. Otherwise it scans the first ``max_scan_rows`` rows, chooses the row with
+       the most approved-column matches, promotes it to the header, drops blank
+       rows, removes repeated header rows, and normalizes duplicate/aliased names.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Table data with canonical column names where possible. It intentionally
+        does not filter to Allocate/Review rows; downstream app code owns that.
+    """
+    if raw is None:
+        return pd.DataFrame()
+    if not isinstance(raw, pd.DataFrame):
+        raw = pd.DataFrame(raw)
+    if raw.empty:
+        return raw.copy()
+
+    df = raw.copy()
+
+    # Case 1: DataFrame already has a real header.
+    col_hits = _header_match_count(df.columns.tolist())
+    if col_hits >= min_header_hits:
+        out = normalize_columns(df)
+        out = out.dropna(how="all").reset_index(drop=True)
+        if len(out):
+            repeated = out.apply(_row_is_repeated_header, axis=1)
+            out = out.loc[~repeated].reset_index(drop=True)
+        return _coalesce_duplicate_columns(out)
+
+    # Case 2: Header is embedded inside the sheet body.
+    scan_n = min(len(df), max_scan_rows)
+    best_i = 0
+    best_hits = -1
+    for i in range(scan_n):
+        hits = _header_match_count(df.iloc[i].tolist())
+        if hits > best_hits:
+            best_i = i
+            best_hits = hits
+
+    # If no good header is found, still normalize the frame so the app can show
+    # a useful missing-column error instead of failing with an AttributeError.
+    if best_hits < min_header_hits:
+        out = normalize_columns(df)
+        out = out.dropna(how="all").reset_index(drop=True)
+        return _coalesce_duplicate_columns(out)
+
+    headers = []
+    used = {}
+    for j, v in enumerate(df.iloc[best_i].tolist()):
+        s = _clean_name(v)
+        if not s or s.lower() == "nan":
+            s = f"Unnamed_{j}"
+        # Keep duplicate raw header names distinct before alias coalescing.
+        n = used.get(s, 0)
+        used[s] = n + 1
+        if n:
+            s = f"{s}_{n}"
+        headers.append(s)
+
+    out = df.iloc[best_i + 1:].copy()
+    out.columns = headers
+    out = out.dropna(how="all").reset_index(drop=True)
+    out = normalize_columns(out)
+
+    if len(out):
+        repeated = out.apply(_row_is_repeated_header, axis=1)
+        out = out.loc[~repeated].reset_index(drop=True)
+
+    return _coalesce_duplicate_columns(out)
