@@ -97,45 +97,46 @@ def _alias_key(x: object) -> str:
     return s
 
 
+def _coalesce_duplicate_columns(out: pd.DataFrame) -> pd.DataFrame:
+    """Collapse duplicate column labels into a single 1-D column.
+
+    Excel exports sometimes contain repeated headers after alias normalization.
+    In pandas, df["Col"] returns a DataFrame when duplicate columns exist, which
+    breaks pd.to_numeric and feature construction. This helper coalesces duplicates
+    by taking the first non-empty/non-null value across duplicates on each row.
+    """
+    if out.columns.is_unique:
+        return out
+
+    rebuilt = {}
+    ordered = []
+    for col in list(dict.fromkeys(out.columns.tolist())):
+        block = out.loc[:, out.columns == col]
+        if block.shape[1] == 1:
+            ser = block.iloc[:, 0]
+        elif col in NUMERIC_COLUMNS or col == TARGET_COLUMN:
+            numeric_block = block.apply(pd.to_numeric, errors="coerce")
+            ser = numeric_block.bfill(axis=1).iloc[:, 0]
+        else:
+            text_block = block.astype(object).where(~block.isna(), np.nan)
+            text_block = text_block.replace(r"^\s*$", np.nan, regex=True)
+            ser = text_block.bfill(axis=1).iloc[:, 0].fillna("")
+        rebuilt[col] = ser
+        ordered.append(col)
+    return pd.DataFrame(rebuilt, index=out.index)[ordered]
+
+
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Rename common workbook headers to canonical approved names."""
+    """Rename common workbook headers to canonical approved names and remove duplicates."""
     out = df.copy()
     ren = {}
-    seen = set()
     for col in out.columns:
         key = _alias_key(col)
         canon = COLUMN_ALIASES.get(key)
-        if canon and canon not in seen:
+        if canon:
             ren[col] = canon
-            seen.add(canon)
     out = out.rename(columns=ren)
-    return out
-
-
-def detect_header_and_table(raw: pd.DataFrame, min_hits: int = 7, scan_rows: int = 80) -> pd.DataFrame:
-    """Detect a working-table header row in messy Excel uploads."""
-    raw = raw.copy()
-    best_i, best_hits = 0, -1
-    max_scan = min(scan_rows, len(raw))
-    canonical_set = set(APPROVED_COLUMNS + [TARGET_COLUMN])
-    for i in range(max_scan):
-        vals = [_clean_name(v) for v in raw.iloc[i].tolist()]
-        hits = 0
-        for v in vals:
-            canon = COLUMN_ALIASES.get(_alias_key(v), v)
-            if canon in canonical_set:
-                hits += 1
-        if hits > best_hits:
-            best_i, best_hits = i, hits
-    if best_hits >= min_hits:
-        header = [_clean_name(v) or f"Unnamed_{j}" for j, v in enumerate(raw.iloc[best_i].tolist())]
-        out = raw.iloc[best_i + 1:].copy()
-        out.columns = header
-        out = out.reset_index(drop=True)
-    else:
-        out = raw.copy()
-    out = normalize_columns(out)
-    out = out.dropna(how="all").reset_index(drop=True)
+    out = _coalesce_duplicate_columns(out)
     return out
 
 
@@ -146,19 +147,35 @@ def ensure_columns(df: pd.DataFrame, include_target: bool = False) -> pd.DataFra
             out[c] = "" if c in TEXT_COLUMNS else 0.0
     if include_target and TARGET_COLUMN not in out.columns:
         out[TARGET_COLUMN] = 0.0
+    # A second pass is cheap and protects against files with repeated exact approved headers.
+    out = _coalesce_duplicate_columns(out)
     return out
 
 
-def numeric_series(df: pd.DataFrame, col: str) -> pd.Series:
+def _single_column_series(df: pd.DataFrame, col: str, default) -> pd.Series:
+    """Return a single Series even when duplicate column labels are present."""
     if col not in df.columns:
-        return pd.Series(np.zeros(len(df)), index=df.index)
-    return pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        return pd.Series([default] * len(df), index=df.index)
+    obj = df.loc[:, df.columns == col]
+    if isinstance(obj, pd.DataFrame):
+        if obj.shape[1] == 0:
+            return pd.Series([default] * len(df), index=df.index)
+        if obj.shape[1] == 1:
+            return obj.iloc[:, 0]
+        # Coalesce duplicate labels row-wise. Numeric conversion happens in numeric_series.
+        block = obj.astype(object).where(~obj.isna(), np.nan).replace(r"^\s*$", np.nan, regex=True)
+        return block.bfill(axis=1).iloc[:, 0].reindex(df.index)
+    return obj.reindex(df.index)
+
+
+def numeric_series(df: pd.DataFrame, col: str) -> pd.Series:
+    ser = _single_column_series(df, col, 0.0)
+    return pd.to_numeric(ser, errors="coerce").fillna(0.0)
 
 
 def text_series(df: pd.DataFrame, col: str) -> pd.Series:
-    if col not in df.columns:
-        return pd.Series([""] * len(df), index=df.index)
-    return df[col].fillna("").astype(str).map(lambda x: _clean_name(x))
+    ser = _single_column_series(df, col, "")
+    return ser.fillna("").astype(str).map(lambda x: _clean_name(x))
 
 
 def safe_div(a, b, default=0.0, clip=1e6):
