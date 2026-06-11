@@ -1,0 +1,70 @@
+{
+  "version": "model3_strong_neural_network_review_two_pass",
+  "description": "Stronger Model 3 architecture with strict per-model row filtering, stacked neural sizing models, true neural specialists, and two-pass Review allocation.",
+  "approved_columns": [
+    "Class Name",
+    "Line Name",
+    "Site",
+    "State",
+    "MIL",
+    "FLM",
+    "Cost",
+    "L30",
+    "D30",
+    "D60",
+    "LW",
+    "TTM",
+    "Supply",
+    "Dc Avail",
+    "Rank",
+    "Proj. Demand",
+    "Alloc. Rec.",
+    "Flag"
+  ],
+  "target_column": "Final Alloc.",
+  "feature_count": 914,
+  "rows": 19234,
+  "allocate_threshold": 0.4750000000000002,
+  "review_pass1_threshold": 0.42500000000000016,
+  "review_threshold": 0.5000000000000002,
+  "review_passes": {
+    "pass1": "zero-supply single-FLM Review rescue",
+    "pass2": "normal Review allocation"
+  },
+  "architecture": {
+    "feature_dim": 914,
+    "allocate_classifier_params": 1714177,
+    "allocate_ranker_params": 1260801,
+    "allocate_auxiliary_params": 842885,
+    "stacked_sizer_input_dim": 921,
+    "stacked_sizer_params": 2289409,
+    "specialist_input_dim": 921,
+    "specialist_params": 644609,
+    "review_pass1_classifier_params": 632833,
+    "review_pass1_ranker_params": 632833
+  },
+  "models": {
+    "allocate_classifier": "allocate_classifier_model.npz",
+    "allocate_regressor": "allocate_regressor_model.npz",
+    "allocate_ranker": "allocate_ranker_model.npz",
+    "allocate_auxiliary": "allocate_auxiliary_model.npz",
+    "review_pass1_classifier": "review_pass1_classifier_model.npz",
+    "review_pass1_ranker": "review_pass1_ranker_model.npz",
+    "review_classifier": "review_classifier_model.npz",
+    "review_regressor": "review_regressor_model.npz",
+    "review_ranker": "review_ranker_model.npz",
+    "review_auxiliary": "review_auxiliary_model.npz",
+    "site802_allocate_specialist": "site802_allocate_specialist_model.npz",
+    "site802_review_specialist": "site802_review_specialist_model.npz",
+    "ak_allocate_specialist": "ak_allocate_specialist_model.npz"
+  },
+  "component_filter_report": "component_training_filter_report.csv",
+  "notes": [
+    "Every model component is trained only on the rows it owns: Allocate models use Allocate rows, Review models use Review rows, Site 802 specialists use Site 802 rows for their segment, and AK specialist uses AK Allocate rows only.",
+    "Review Pass 1 is trained only on Review rows where Supply <= 0 and Dc Avail > 0; it can only allocate one FLM capped by Dc Avail.",
+    "Files named regressor are neural-network sizing models for compatibility with the original Model 3 naming convention.",
+    "Sizer models consume classifier probability, ranker score, and auxiliary neural outputs.",
+    "Site 802 and AK specialists are neural networks and consume corresponding main-model meta outputs.",
+    "Review rows are processed in two passes: Pass 1 can allocate a single FLM only when Supply is zero and Dc Avail is positive; Pass 2 is the normal Review sizing pass for all remaining needed Review rows."
+  ]
+}

@@ -1,0 +1,1077 @@
+feature_name,feature_index
+MIL,0
+FLM,1
+Cost,2
+L30,3
+D30,4
+D60,5
+LW,6
+TTM,7
+Supply,8
+Dc Avail,9
+Proj. Demand,10
+Alloc. Rec.,11
+max_demand,12
+avg_demand,13
+demand_pressure,14
+proj_gap,15
+d30_gap,16
+d60_gap,17
+mil_gap,18
+supply_to_d30,19
+supply_to_d60,20
+supply_to_proj,21
+l30_to_d30,22
+d30_to_d60,23
+lw_month_to_l30,24
+ttm_monthly,25
+rec_flms,26
+rec_minus_pressure,27
+dc_flms,28
+dc_flms_capped,29
+rank_score,30
+rec_cost_value,31
+supply_cost_value,32
+weak_demand,33
+zero_supply,34
+has_alloc_rec,35
+has_dc_avail,36
+proj_flms,37
+rec_minus_proj,38
+rec_minus_proj_flms,39
+proj_minus_rec_flms,40
+proj_gap_flms,41
+rec_gap_flms_base,42
+post_rec_supply,43
+post_rec_to_proj,44
+post_rec_to_d30,45
+post_rec_to_d60_month,46
+proj_to_rec,47
+rec_to_proj,48
+proj_to_dc,49
+rec_to_dc,50
+dc_after_rec,51
+dc_after_rec_flms,52
+proj_supported_by_rec,53
+rec_exceeds_proj_1flm,54
+proj_exceeds_rec_1flm,55
+has_proj_demand,56
+has_alloc_rec_signal,57
+proj_rec_agreement,58
+weekly_velocity_proxy,59
+monthly_velocity_proxy,60
+shortage_units,61
+overstock_units,62
+shortage_flms,63
+rec_gap_flms,64
+demand_trend_30_60,65
+demand_trend_l30_d30,66
+demand_acceleration,67
+woc_proxy,68
+dc_to_need,69
+rec_to_need,70
+rec_to_dc,71
+cost_log1p,72
+demand_log1p,73
+supply_log1p,74
+dc_log1p,75
+rec_log1p,76
+pressure_x_rank,77
+pressure_x_cost,78
+rec_x_rank,79
+dc_x_rank,80
+single_flm_available,81
+below_flm_remainder,82
+high_need_no_rec,83
+rec_above_need,84
+need_above_rec,85
+demand_consensus,86
+normalized_pressure,87
+allocation_value_need,88
+rec_value,89
+supply_value,90
+log_l30,91
+log_d30,92
+log_d60,93
+log_lw,94
+log_ttm,95
+log_proj_demand,96
+dc_raw_positive,97
+dc_raw_le_25,98
+dc_raw_26_50,99
+dc_raw_51_100,100
+dc_raw_101_300,101
+dc_raw_301_600,102
+dc_raw_601_1000,103
+dc_raw_1001_2000,104
+dc_raw_2000_plus,105
+hash__Class Name__0,106
+hash__Class Name__1,107
+hash__Class Name__2,108
+hash__Class Name__3,109
+hash__Class Name__4,110
+hash__Class Name__5,111
+hash__Class Name__6,112
+hash__Class Name__7,113
+hash__Class Name__8,114
+hash__Class Name__9,115
+hash__Class Name__10,116
+hash__Class Name__11,117
+hash__Class Name__12,118
+hash__Class Name__13,119
+hash__Class Name__14,120
+hash__Class Name__15,121
+hash__Class Name__16,122
+hash__Class Name__17,123
+hash__Class Name__18,124
+hash__Class Name__19,125
+hash__Class Name__20,126
+hash__Class Name__21,127
+hash__Class Name__22,128
+hash__Class Name__23,129
+hash__Class Name__24,130
+hash__Class Name__25,131
+hash__Class Name__26,132
+hash__Class Name__27,133
+hash__Class Name__28,134
+hash__Class Name__29,135
+hash__Class Name__30,136
+hash__Class Name__31,137
+hash__Class Name__32,138
+hash__Class Name__33,139
+hash__Class Name__34,140
+hash__Class Name__35,141
+hash__Class Name__36,142
+hash__Class Name__37,143
+hash__Class Name__38,144
+hash__Class Name__39,145
+hash__Class Name__40,146
+hash__Class Name__41,147
+hash__Class Name__42,148
+hash__Class Name__43,149
+hash__Class Name__44,150
+hash__Class Name__45,151
+hash__Class Name__46,152
+hash__Class Name__47,153
+hash__Class Name__48,154
+hash__Class Name__49,155
+hash__Class Name__50,156
+hash__Class Name__51,157
+hash__Class Name__52,158
+hash__Class Name__53,159
+hash__Class Name__54,160
+hash__Class Name__55,161
+hash__Class Name__56,162
+hash__Class Name__57,163
+hash__Class Name__58,164
+hash__Class Name__59,165
+hash__Class Name__60,166
+hash__Class Name__61,167
+hash__Class Name__62,168
+hash__Class Name__63,169
+hash__Class Name__64,170
+hash__Class Name__65,171
+hash__Class Name__66,172
+hash__Class Name__67,173
+hash__Class Name__68,174
+hash__Class Name__69,175
+hash__Class Name__70,176
+hash__Class Name__71,177
+hash__Class Name__72,178
+hash__Class Name__73,179
+hash__Class Name__74,180
+hash__Class Name__75,181
+hash__Class Name__76,182
+hash__Class Name__77,183
+hash__Class Name__78,184
+hash__Class Name__79,185
+hash__Class Name__80,186
+hash__Class Name__81,187
+hash__Class Name__82,188
+hash__Class Name__83,189
+hash__Class Name__84,190
+hash__Class Name__85,191
+hash__Class Name__86,192
+hash__Class Name__87,193
+hash__Class Name__88,194
+hash__Class Name__89,195
+hash__Class Name__90,196
+hash__Class Name__91,197
+hash__Class Name__92,198
+hash__Class Name__93,199
+hash__Class Name__94,200
+hash__Class Name__95,201
+hash__Class Name__96,202
+hash__Class Name__97,203
+hash__Class Name__98,204
+hash__Class Name__99,205
+hash__Class Name__100,206
+hash__Class Name__101,207
+hash__Class Name__102,208
+hash__Class Name__103,209
+hash__Class Name__104,210
+hash__Class Name__105,211
+hash__Class Name__106,212
+hash__Class Name__107,213
+hash__Class Name__108,214
+hash__Class Name__109,215
+hash__Class Name__110,216
+hash__Class Name__111,217
+hash__Class Name__112,218
+hash__Class Name__113,219
+hash__Class Name__114,220
+hash__Class Name__115,221
+hash__Class Name__116,222
+hash__Class Name__117,223
+hash__Class Name__118,224
+hash__Class Name__119,225
+hash__Class Name__120,226
+hash__Class Name__121,227
+hash__Class Name__122,228
+hash__Class Name__123,229
+hash__Class Name__124,230
+hash__Class Name__125,231
+hash__Class Name__126,232
+hash__Class Name__127,233
+hash__Class Name__128,234
+hash__Class Name__129,235
+hash__Class Name__130,236
+hash__Class Name__131,237
+hash__Class Name__132,238
+hash__Class Name__133,239
+hash__Class Name__134,240
+hash__Class Name__135,241
+hash__Class Name__136,242
+hash__Class Name__137,243
+hash__Class Name__138,244
+hash__Class Name__139,245
+hash__Class Name__140,246
+hash__Class Name__141,247
+hash__Class Name__142,248
+hash__Class Name__143,249
+hash__Class Name__144,250
+hash__Class Name__145,251
+hash__Class Name__146,252
+hash__Class Name__147,253
+hash__Class Name__148,254
+hash__Class Name__149,255
+hash__Class Name__150,256
+hash__Class Name__151,257
+hash__Class Name__152,258
+hash__Class Name__153,259
+hash__Class Name__154,260
+hash__Class Name__155,261
+hash__Class Name__156,262
+hash__Class Name__157,263
+hash__Class Name__158,264
+hash__Class Name__159,265
+hash__Class Name__160,266
+hash__Class Name__161,267
+hash__Class Name__162,268
+hash__Class Name__163,269
+hash__Class Name__164,270
+hash__Class Name__165,271
+hash__Class Name__166,272
+hash__Class Name__167,273
+hash__Class Name__168,274
+hash__Class Name__169,275
+hash__Class Name__170,276
+hash__Class Name__171,277
+hash__Class Name__172,278
+hash__Class Name__173,279
+hash__Class Name__174,280
+hash__Class Name__175,281
+hash__Class Name__176,282
+hash__Class Name__177,283
+hash__Class Name__178,284
+hash__Class Name__179,285
+hash__Class Name__180,286
+hash__Class Name__181,287
+hash__Class Name__182,288
+hash__Class Name__183,289
+hash__Class Name__184,290
+hash__Class Name__185,291
+hash__Class Name__186,292
+hash__Class Name__187,293
+hash__Class Name__188,294
+hash__Class Name__189,295
+hash__Class Name__190,296
+hash__Class Name__191,297
+hash__Line Name__0,298
+hash__Line Name__1,299
+hash__Line Name__2,300
+hash__Line Name__3,301
+hash__Line Name__4,302
+hash__Line Name__5,303
+hash__Line Name__6,304
+hash__Line Name__7,305
+hash__Line Name__8,306
+hash__Line Name__9,307
+hash__Line Name__10,308
+hash__Line Name__11,309
+hash__Line Name__12,310
+hash__Line Name__13,311
+hash__Line Name__14,312
+hash__Line Name__15,313
+hash__Line Name__16,314
+hash__Line Name__17,315
+hash__Line Name__18,316
+hash__Line Name__19,317
+hash__Line Name__20,318
+hash__Line Name__21,319
+hash__Line Name__22,320
+hash__Line Name__23,321
+hash__Line Name__24,322
+hash__Line Name__25,323
+hash__Line Name__26,324
+hash__Line Name__27,325
+hash__Line Name__28,326
+hash__Line Name__29,327
+hash__Line Name__30,328
+hash__Line Name__31,329
+hash__Line Name__32,330
+hash__Line Name__33,331
+hash__Line Name__34,332
+hash__Line Name__35,333
+hash__Line Name__36,334
+hash__Line Name__37,335
+hash__Line Name__38,336
+hash__Line Name__39,337
+hash__Line Name__40,338
+hash__Line Name__41,339
+hash__Line Name__42,340
+hash__Line Name__43,341
+hash__Line Name__44,342
+hash__Line Name__45,343
+hash__Line Name__46,344
+hash__Line Name__47,345
+hash__Line Name__48,346
+hash__Line Name__49,347
+hash__Line Name__50,348
+hash__Line Name__51,349
+hash__Line Name__52,350
+hash__Line Name__53,351
+hash__Line Name__54,352
+hash__Line Name__55,353
+hash__Line Name__56,354
+hash__Line Name__57,355
+hash__Line Name__58,356
+hash__Line Name__59,357
+hash__Line Name__60,358
+hash__Line Name__61,359
+hash__Line Name__62,360
+hash__Line Name__63,361
+hash__Line Name__64,362
+hash__Line Name__65,363
+hash__Line Name__66,364
+hash__Line Name__67,365
+hash__Line Name__68,366
+hash__Line Name__69,367
+hash__Line Name__70,368
+hash__Line Name__71,369
+hash__Line Name__72,370
+hash__Line Name__73,371
+hash__Line Name__74,372
+hash__Line Name__75,373
+hash__Line Name__76,374
+hash__Line Name__77,375
+hash__Line Name__78,376
+hash__Line Name__79,377
+hash__Line Name__80,378
+hash__Line Name__81,379
+hash__Line Name__82,380
+hash__Line Name__83,381
+hash__Line Name__84,382
+hash__Line Name__85,383
+hash__Line Name__86,384
+hash__Line Name__87,385
+hash__Line Name__88,386
+hash__Line Name__89,387
+hash__Line Name__90,388
+hash__Line Name__91,389
+hash__Line Name__92,390
+hash__Line Name__93,391
+hash__Line Name__94,392
+hash__Line Name__95,393
+hash__Line Name__96,394
+hash__Line Name__97,395
+hash__Line Name__98,396
+hash__Line Name__99,397
+hash__Line Name__100,398
+hash__Line Name__101,399
+hash__Line Name__102,400
+hash__Line Name__103,401
+hash__Line Name__104,402
+hash__Line Name__105,403
+hash__Line Name__106,404
+hash__Line Name__107,405
+hash__Line Name__108,406
+hash__Line Name__109,407
+hash__Line Name__110,408
+hash__Line Name__111,409
+hash__Line Name__112,410
+hash__Line Name__113,411
+hash__Line Name__114,412
+hash__Line Name__115,413
+hash__Line Name__116,414
+hash__Line Name__117,415
+hash__Line Name__118,416
+hash__Line Name__119,417
+hash__Line Name__120,418
+hash__Line Name__121,419
+hash__Line Name__122,420
+hash__Line Name__123,421
+hash__Line Name__124,422
+hash__Line Name__125,423
+hash__Line Name__126,424
+hash__Line Name__127,425
+hash__Line Name__128,426
+hash__Line Name__129,427
+hash__Line Name__130,428
+hash__Line Name__131,429
+hash__Line Name__132,430
+hash__Line Name__133,431
+hash__Line Name__134,432
+hash__Line Name__135,433
+hash__Line Name__136,434
+hash__Line Name__137,435
+hash__Line Name__138,436
+hash__Line Name__139,437
+hash__Line Name__140,438
+hash__Line Name__141,439
+hash__Line Name__142,440
+hash__Line Name__143,441
+hash__Line Name__144,442
+hash__Line Name__145,443
+hash__Line Name__146,444
+hash__Line Name__147,445
+hash__Line Name__148,446
+hash__Line Name__149,447
+hash__Line Name__150,448
+hash__Line Name__151,449
+hash__Line Name__152,450
+hash__Line Name__153,451
+hash__Line Name__154,452
+hash__Line Name__155,453
+hash__Line Name__156,454
+hash__Line Name__157,455
+hash__Line Name__158,456
+hash__Line Name__159,457
+hash__Line Name__160,458
+hash__Line Name__161,459
+hash__Line Name__162,460
+hash__Line Name__163,461
+hash__Line Name__164,462
+hash__Line Name__165,463
+hash__Line Name__166,464
+hash__Line Name__167,465
+hash__Line Name__168,466
+hash__Line Name__169,467
+hash__Line Name__170,468
+hash__Line Name__171,469
+hash__Line Name__172,470
+hash__Line Name__173,471
+hash__Line Name__174,472
+hash__Line Name__175,473
+hash__Line Name__176,474
+hash__Line Name__177,475
+hash__Line Name__178,476
+hash__Line Name__179,477
+hash__Line Name__180,478
+hash__Line Name__181,479
+hash__Line Name__182,480
+hash__Line Name__183,481
+hash__Line Name__184,482
+hash__Line Name__185,483
+hash__Line Name__186,484
+hash__Line Name__187,485
+hash__Line Name__188,486
+hash__Line Name__189,487
+hash__Line Name__190,488
+hash__Line Name__191,489
+hash__Line Name__192,490
+hash__Line Name__193,491
+hash__Line Name__194,492
+hash__Line Name__195,493
+hash__Line Name__196,494
+hash__Line Name__197,495
+hash__Line Name__198,496
+hash__Line Name__199,497
+hash__Line Name__200,498
+hash__Line Name__201,499
+hash__Line Name__202,500
+hash__Line Name__203,501
+hash__Line Name__204,502
+hash__Line Name__205,503
+hash__Line Name__206,504
+hash__Line Name__207,505
+hash__Line Name__208,506
+hash__Line Name__209,507
+hash__Line Name__210,508
+hash__Line Name__211,509
+hash__Line Name__212,510
+hash__Line Name__213,511
+hash__Line Name__214,512
+hash__Line Name__215,513
+hash__Line Name__216,514
+hash__Line Name__217,515
+hash__Line Name__218,516
+hash__Line Name__219,517
+hash__Line Name__220,518
+hash__Line Name__221,519
+hash__Line Name__222,520
+hash__Line Name__223,521
+hash__Line Name__224,522
+hash__Line Name__225,523
+hash__Line Name__226,524
+hash__Line Name__227,525
+hash__Line Name__228,526
+hash__Line Name__229,527
+hash__Line Name__230,528
+hash__Line Name__231,529
+hash__Line Name__232,530
+hash__Line Name__233,531
+hash__Line Name__234,532
+hash__Line Name__235,533
+hash__Line Name__236,534
+hash__Line Name__237,535
+hash__Line Name__238,536
+hash__Line Name__239,537
+hash__Line Name__240,538
+hash__Line Name__241,539
+hash__Line Name__242,540
+hash__Line Name__243,541
+hash__Line Name__244,542
+hash__Line Name__245,543
+hash__Line Name__246,544
+hash__Line Name__247,545
+hash__Line Name__248,546
+hash__Line Name__249,547
+hash__Line Name__250,548
+hash__Line Name__251,549
+hash__Line Name__252,550
+hash__Line Name__253,551
+hash__Line Name__254,552
+hash__Line Name__255,553
+hash__Site__0,554
+hash__Site__1,555
+hash__Site__2,556
+hash__Site__3,557
+hash__Site__4,558
+hash__Site__5,559
+hash__Site__6,560
+hash__Site__7,561
+hash__Site__8,562
+hash__Site__9,563
+hash__Site__10,564
+hash__Site__11,565
+hash__Site__12,566
+hash__Site__13,567
+hash__Site__14,568
+hash__Site__15,569
+hash__Site__16,570
+hash__Site__17,571
+hash__Site__18,572
+hash__Site__19,573
+hash__Site__20,574
+hash__Site__21,575
+hash__Site__22,576
+hash__Site__23,577
+hash__Site__24,578
+hash__Site__25,579
+hash__Site__26,580
+hash__Site__27,581
+hash__Site__28,582
+hash__Site__29,583
+hash__Site__30,584
+hash__Site__31,585
+hash__Site__32,586
+hash__Site__33,587
+hash__Site__34,588
+hash__Site__35,589
+hash__Site__36,590
+hash__Site__37,591
+hash__Site__38,592
+hash__Site__39,593
+hash__Site__40,594
+hash__Site__41,595
+hash__Site__42,596
+hash__Site__43,597
+hash__Site__44,598
+hash__Site__45,599
+hash__Site__46,600
+hash__Site__47,601
+hash__Site__48,602
+hash__Site__49,603
+hash__Site__50,604
+hash__Site__51,605
+hash__Site__52,606
+hash__Site__53,607
+hash__Site__54,608
+hash__Site__55,609
+hash__Site__56,610
+hash__Site__57,611
+hash__Site__58,612
+hash__Site__59,613
+hash__Site__60,614
+hash__Site__61,615
+hash__Site__62,616
+hash__Site__63,617
+hash__Site__64,618
+hash__Site__65,619
+hash__Site__66,620
+hash__Site__67,621
+hash__Site__68,622
+hash__Site__69,623
+hash__Site__70,624
+hash__Site__71,625
+hash__Site__72,626
+hash__Site__73,627
+hash__Site__74,628
+hash__Site__75,629
+hash__Site__76,630
+hash__Site__77,631
+hash__Site__78,632
+hash__Site__79,633
+hash__Site__80,634
+hash__Site__81,635
+hash__Site__82,636
+hash__Site__83,637
+hash__Site__84,638
+hash__Site__85,639
+hash__Site__86,640
+hash__Site__87,641
+hash__Site__88,642
+hash__Site__89,643
+hash__Site__90,644
+hash__Site__91,645
+hash__Site__92,646
+hash__Site__93,647
+hash__Site__94,648
+hash__Site__95,649
+hash__Site__96,650
+hash__Site__97,651
+hash__Site__98,652
+hash__Site__99,653
+hash__Site__100,654
+hash__Site__101,655
+hash__Site__102,656
+hash__Site__103,657
+hash__Site__104,658
+hash__Site__105,659
+hash__Site__106,660
+hash__Site__107,661
+hash__Site__108,662
+hash__Site__109,663
+hash__Site__110,664
+hash__Site__111,665
+hash__Site__112,666
+hash__Site__113,667
+hash__Site__114,668
+hash__Site__115,669
+hash__Site__116,670
+hash__Site__117,671
+hash__Site__118,672
+hash__Site__119,673
+hash__Site__120,674
+hash__Site__121,675
+hash__Site__122,676
+hash__Site__123,677
+hash__Site__124,678
+hash__Site__125,679
+hash__Site__126,680
+hash__Site__127,681
+hash__Site__128,682
+hash__Site__129,683
+hash__Site__130,684
+hash__Site__131,685
+hash__Site__132,686
+hash__Site__133,687
+hash__Site__134,688
+hash__Site__135,689
+hash__Site__136,690
+hash__Site__137,691
+hash__Site__138,692
+hash__Site__139,693
+hash__Site__140,694
+hash__Site__141,695
+hash__Site__142,696
+hash__Site__143,697
+hash__Site__144,698
+hash__Site__145,699
+hash__Site__146,700
+hash__Site__147,701
+hash__Site__148,702
+hash__Site__149,703
+hash__Site__150,704
+hash__Site__151,705
+hash__Site__152,706
+hash__Site__153,707
+hash__Site__154,708
+hash__Site__155,709
+hash__Site__156,710
+hash__Site__157,711
+hash__Site__158,712
+hash__Site__159,713
+hash__Site__160,714
+hash__Site__161,715
+hash__Site__162,716
+hash__Site__163,717
+hash__Site__164,718
+hash__Site__165,719
+hash__Site__166,720
+hash__Site__167,721
+hash__Site__168,722
+hash__Site__169,723
+hash__Site__170,724
+hash__Site__171,725
+hash__Site__172,726
+hash__Site__173,727
+hash__Site__174,728
+hash__Site__175,729
+hash__Site__176,730
+hash__Site__177,731
+hash__Site__178,732
+hash__Site__179,733
+hash__Site__180,734
+hash__Site__181,735
+hash__Site__182,736
+hash__Site__183,737
+hash__Site__184,738
+hash__Site__185,739
+hash__Site__186,740
+hash__Site__187,741
+hash__Site__188,742
+hash__Site__189,743
+hash__Site__190,744
+hash__Site__191,745
+hash__Rank__0,746
+hash__Rank__1,747
+hash__Rank__2,748
+hash__Rank__3,749
+hash__Rank__4,750
+hash__Rank__5,751
+hash__Rank__6,752
+hash__Rank__7,753
+hash__Rank__8,754
+hash__Rank__9,755
+hash__Rank__10,756
+hash__Rank__11,757
+hash__Rank__12,758
+hash__Rank__13,759
+hash__Rank__14,760
+hash__Rank__15,761
+hash__Flag__0,762
+hash__Flag__1,763
+hash__Flag__2,764
+hash__Flag__3,765
+hash__Flag__4,766
+hash__Flag__5,767
+hash__Flag__6,768
+hash__Flag__7,769
+hash__Flag__8,770
+hash__Flag__9,771
+hash__Flag__10,772
+hash__Flag__11,773
+hash__Flag__12,774
+hash__Flag__13,775
+hash__Flag__14,776
+hash__Flag__15,777
+hash__Dc Avail Bucket__0,778
+hash__Dc Avail Bucket__1,779
+hash__Dc Avail Bucket__2,780
+hash__Dc Avail Bucket__3,781
+hash__Dc Avail Bucket__4,782
+hash__Dc Avail Bucket__5,783
+hash__Dc Avail Bucket__6,784
+hash__Dc Avail Bucket__7,785
+hash__Dc Avail Bucket__8,786
+hash__Dc Avail Bucket__9,787
+hash__Dc Avail Bucket__10,788
+hash__Dc Avail Bucket__11,789
+hash__Dc Avail Bucket__12,790
+hash__Dc Avail Bucket__13,791
+hash__Dc Avail Bucket__14,792
+hash__Dc Avail Bucket__15,793
+hash__Dc Avail Raw Bucket__0,794
+hash__Dc Avail Raw Bucket__1,795
+hash__Dc Avail Raw Bucket__2,796
+hash__Dc Avail Raw Bucket__3,797
+hash__Dc Avail Raw Bucket__4,798
+hash__Dc Avail Raw Bucket__5,799
+hash__Dc Avail Raw Bucket__6,800
+hash__Dc Avail Raw Bucket__7,801
+hash__Dc Avail Raw Bucket__8,802
+hash__Dc Avail Raw Bucket__9,803
+hash__Dc Avail Raw Bucket__10,804
+hash__Dc Avail Raw Bucket__11,805
+ctx__weighted_velocity,806
+ctx__sheet_need,807
+ctx__mean_demand_signal,808
+ctx__demand_consensus,809
+ctx__demand_above_supply_share,810
+ctx__high_conf_demand_share,811
+ctx__trend_l30_vs_d30,812
+ctx__trend_d30_vs_d60_month,813
+ctx__trend_lw_month_vs_l30,814
+ctx__short_term_acceleration,815
+ctx__ttm_vs_recent,816
+ctx__recent_support,817
+ctx__stable_support,818
+ctx__supply_gap_velocity,819
+ctx__supply_gap_sheet_need,820
+ctx__supply_gap_d30,821
+ctx__supply_gap_d60_month,822
+ctx__supply_gap_proj,823
+ctx__supply_gap_l30,824
+ctx__shortage_units,825
+ctx__shortage_sheet_units,826
+ctx__shortage_flms,827
+ctx__shortage_sheet_flms,828
+ctx__overstock_units,829
+ctx__supply_to_weighted_velocity,830
+ctx__supply_to_sheet_need,831
+ctx__supply_to_d30,832
+ctx__supply_to_d60_month,833
+ctx__supply_to_proj,834
+ctx__woc_proxy,835
+ctx__rec_flms,836
+ctx__dc_flms,837
+ctx__post_rec_to_velocity,838
+ctx__post_rec_to_sheet_need,839
+ctx__rec_minus_need_flms,840
+ctx__rec_to_need,841
+ctx__rec_above_need,842
+ctx__need_above_rec,843
+ctx__weak_demand,844
+ctx__positive_sheet_signal,845
+ctx__rank_score,846
+ctx__cost_log1p,847
+ctx__flm,848
+ctx__dc_avail,849
+ctx__supply,850
+ctx__alloc_rec,851
+ctx__pressure_x_rank,852
+ctx__pressure_x_cost,853
+ctx__rec_x_rank,854
+ctx__dc_x_rank,855
+ctx__dc_raw_empty,856
+ctx__dc_raw_1_25,857
+ctx__dc_raw_26_50,858
+ctx__dc_raw_51_100,859
+ctx__dc_raw_101_300,860
+ctx__dc_raw_301_600,861
+ctx__dc_raw_601_1000,862
+ctx__dc_raw_1001_2000,863
+ctx__dc_raw_2000_plus,864
+ctx__proj_flms,865
+ctx__proj_gap_units,866
+ctx__proj_gap_flms,867
+ctx__rec_minus_proj,868
+ctx__rec_minus_proj_flms,869
+ctx__proj_minus_rec_flms,870
+ctx__post_rec_to_proj,871
+ctx__proj_to_rec,872
+ctx__rec_to_proj,873
+ctx__dc_after_rec,874
+ctx__dc_after_rec_flms,875
+ctx__proj_supported_by_rec,876
+ctx__rec_exceeds_proj_1flm,877
+ctx__proj_exceeds_rec_1flm,878
+ctx__has_proj_demand,879
+ctx__has_alloc_rec_signal,880
+ctx__proj_rec_agreement,881
+ctx__demand_signal_count_above_supply,882
+ctx__demand_signal_share_above_supply,883
+ctx__demand_signal_count_above_supply_plus_1flm,884
+ctx__demand_signal_share_above_supply_plus_1flm,885
+ctx__demand_positive_count,886
+ctx__demand_zero_count,887
+ctx__demand_signal_range,888
+ctx__demand_signal_std_v36,889
+ctx__demand_signal_cv,890
+ctx__recent_vs_long_term_disagreement,891
+ctx__short_term_vs_medium_term_disagreement,892
+ctx__demand_disagreement_risk,893
+ctx__rec_proj_abs_gap,894
+ctx__rec_proj_gap_flms,895
+ctx__rec_proj_agreement_flag,896
+ctx__rec_supported_by_recent_sales,897
+ctx__proj_supported_by_recent_sales,898
+ctx__rec_same_direction_as_velocity,899
+ctx__proj_same_direction_as_velocity,900
+ctx__flm_to_l30,901
+ctx__flm_to_d30,902
+ctx__flm_to_d60_monthly,903
+ctx__flm_to_proj,904
+ctx__flm_to_weighted_velocity,905
+ctx__supply_after_1flm,906
+ctx__supply_after_2flm,907
+ctx__supply_after_rec,908
+ctx__need_after_1flm,909
+ctx__need_after_2flm,910
+ctx__oversupply_after_1flm,911
+ctx__oversupply_after_2flm,912
+ctx__single_flm_supply_to_velocity,913
+ctx__single_flm_supply_to_sheet_need,914
+ctx__single_flm_oversupply_risk,915
+ctx__class_line_total_dc_avail,916
+ctx__class_line_total_proj_gap,917
+ctx__class_line_total_rec,918
+ctx__class_line_avg_supply,919
+ctx__class_line_avg_velocity,920
+ctx__class_line_row_count,921
+ctx__class_line_positive_rec_rate,922
+ctx__class_line_need_percentile,923
+ctx__class_line_rank_percentile,924
+ctx__class_line_velocity_percentile,925
+ctx__class_line_rec_percentile,926
+ctx__dc_to_total_need_proxy,927
+ctx__dc_to_proj_gap,928
+ctx__dc_to_rec_gap,929
+ctx__dc_scarcity_score,930
+ctx__dc_can_cover_rec_flag,931
+ctx__dc_can_cover_shortage_flag,932
+ctx__site_need_percentile,933
+ctx__site_velocity_percentile,934
+ctx__site_rec_percentile,935
+ctx__site_supply_pressure_percentile,936
+ctx__site_vs_group_velocity_rank,937
+ctx__site_vs_group_shortage_rank,938
+ctx__site_vs_group_rec_rank,939
+ctx__rank_inverse,940
+ctx__rank_x_shortage_flms,941
+ctx__rank_x_weighted_velocity,942
+ctx__rank_x_proj_gap,943
+ctx__top_rank_flag,944
+ctx__bottom_rank_flag,945
+ctx__allocation_cost_if_1flm,946
+ctx__allocation_cost_if_rec,947
+ctx__shortage_cost_proxy,948
+ctx__overalloc_cost_proxy,949
+ctx__cost_x_shortage_flms,950
+ctx__cost_x_rec_excess,951
+ctx__zero_l30_flag,952
+ctx__zero_d30_flag,953
+ctx__zero_d60_flag,954
+ctx__zero_lw_flag,955
+ctx__zero_ttm_flag,956
+ctx__zero_recent_sales_flag,957
+ctx__zero_all_recent_demand_flag,958
+ctx__sparse_demand_count,959
+ctx__has_any_sales_flag,960
+ctx__rec_is_zero,961
+ctx__rec_is_one_flm,962
+ctx__rec_is_multi_flm,963
+ctx__rec_exceeds_dc,964
+ctx__rec_equals_dc,965
+ctx__rec_below_dc,966
+ctx__rec_exceeds_proj,967
+ctx__rec_exceeds_velocity,968
+ctx__rec_exceeds_shortage,969
+ctx__rec_supported_by_shortage,970
+ctx__review_priority_score,971
+ctx__review_top_need_in_group,972
+ctx__review_top_rank_in_group,973
+ctx__review_high_confidence_need,974
+ctx__review_low_confidence_need,975
+ctx__site802_high_rec_low_velocity,976
+ctx__site802_proj_rec_disagreement,977
+ctx__site802_single_flm_risk,978
+ctx__site802_strong_demand_support,979
+ctx__site802_cut_candidate,980
+ctx__site802_rescue_candidate,981
+ctx__conservative_need_score,982
+ctx__aggressive_need_score,983
+ctx__need_rank_in_class_line,984
+ctx__need_percentile_in_class_line_v37,985
+ctx__rec_rank_in_class_line,986
+ctx__velocity_rank_in_class_line,987
+ctx__shortage_flm_rank_in_class_line,988
+ctx__rank_adjusted_need_percentile,989
+ctx__top5_need_in_class_line,990
+ctx__top10_need_in_class_line,991
+ctx__above_median_need_in_class_line,992
+ctx__class_line_total_shortage_flms_v37,993
+ctx__class_line_total_alloc_rec_flms,994
+ctx__class_line_total_proj_gap_flms,995
+ctx__class_line_dc_to_total_shortage,996
+ctx__class_line_dc_to_total_rec,997
+ctx__class_line_dc_pressure_score,998
+ctx__class_line_rows_competing_for_dc,999
+ctx__class_line_tight_dc_flag,1000
+ctx__class_line_abundant_dc_flag,1001
+ctx__supply_after_3flm,1002
+ctx__gap_after_1flm_to_proj,1003
+ctx__gap_after_2flm_to_proj,1004
+ctx__gap_after_3flm_to_proj,1005
+ctx__gap_after_1flm_to_velocity,1006
+ctx__gap_after_2flm_to_velocity,1007
+ctx__gap_after_3flm_to_velocity,1008
+ctx__oversupply_after_3flm,1009
+ctx__hyp_final_supply_if_rec,1010
+ctx__hyp_final_supply_if_1flm,1011
+ctx__hyp_final_supply_if_2flm,1012
+ctx__hyp_final_supply_if_3flm,1013
+ctx__hyp_final_supply_if_rec_to_proj_ratio,1014
+ctx__hyp_final_supply_if_rec_to_velocity_ratio,1015
+ctx__hyp_final_supply_if_1flm_to_proj_ratio,1016
+ctx__rec_trust_score,1017
+ctx__rec_trust_high_flag,1018
+ctx__rec_trust_low_flag,1019
+ctx__rec_cut_candidate,1020
+ctx__rec_follow_candidate,1021
+ctx__rec_add_candidate,1022
+ctx__recent_sales_all_zero,1023
+ctx__sparse_guardrail_score,1024
+ctx__rec_size_class,1025
+ctx__proj_need_size_class,1026
+ctx__shortage_size_class,1027
+ctx__dc_size_class,1028
+ctx__one_flm_candidate,1029
+ctx__two_flm_candidate,1030
+ctx__large_alloc_candidate,1031
+ctx__site_total_shortage,1032
+ctx__site_total_alloc_rec,1033
+ctx__site_avg_velocity,1034
+ctx__site_avg_supply_gap,1035
+ctx__site_rows_with_positive_rec,1036
+ctx__site_positive_rec_rate,1037
+ctx__site_share_of_class_line_need,1038
+ctx__site_need_percentile_v37,1039
+ctx__peer_avg_l30,1040
+ctx__peer_avg_d30,1041
+ctx__peer_avg_d60,1042
+ctx__peer_avg_supply,1043
+ctx__peer_avg_proj,1044
+ctx__peer_avg_rec,1045
+ctx__row_l30_vs_peer_avg,1046
+ctx__row_proj_vs_peer_avg,1047
+ctx__row_rec_vs_peer_avg,1048
+ctx__row_supply_gap_vs_peer_avg,1049
+ctx__requires_cut_behavior,1050
+ctx__requires_rescue_behavior,1051
+ctx__requires_review_rank_behavior,1052
+ctx__requires_low_dc_behavior,1053
+ctx__requires_sparse_demand_behavior,1054
+ctx__requires_large_alloc_behavior,1055
+ctx__review_competition_score,1056
+ctx__review_top_5pct_need,1057
+ctx__review_top_10pct_need,1058
+ctx__review_above_group_median_need,1059
+ctx__review_below_group_median_need,1060
+ctx__allocate_cut_candidate,1061
+ctx__allocate_rescue_candidate,1062
+ctx__allocate_follow_rec_candidate,1063
+ctx__allocate_reduce_to_1flm_candidate,1064
+ctx__allocate_zero_out_candidate,1065
+ctx__rank_demand_alignment,1066
+ctx__high_rank_high_need,1067
+ctx__high_rank_low_need,1068
+ctx__low_rank_high_need,1069
+ctx__low_rank_low_need,1070
+ctx__cost_percentile_in_class_line,1071
+ctx__cost_x_one_flm,1072
+ctx__cost_x_rec_flms,1073
+ctx__cost_adjusted_shortage,1074
+ctx__cost_adjusted_oversupply_risk,1075

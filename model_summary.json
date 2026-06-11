@@ -1,0 +1,20 @@
+{
+  "rows": 21669,
+  "features": 1076,
+  "allocate_rows": 10575,
+  "review_rows": 11094,
+  "allocate_threshold": 0.4,
+  "review_threshold": 0.5,
+  "output_files": [
+    "model_config.json",
+    "allocate_model.npz",
+    "review_model.npz",
+    "site802_specialist_model.npz",
+    "ak_specialist_model.npz",
+    "training_history.json",
+    "tuning_output.json",
+    "model_summary.json",
+    "feature_catalog.csv",
+    "model_report_package.zip"
+  ]
+}

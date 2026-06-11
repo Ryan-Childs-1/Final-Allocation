@@ -1,0 +1,70 @@
+{
+  "max_model_mb": 24.0,
+  "models": {
+    "ak_allocate_specialist_model.npz": {
+      "file": "ak_allocate_specialist_model.npz",
+      "split": false,
+      "size_mb": 2.324
+    },
+    "allocate_auxiliary_model.npz": {
+      "file": "allocate_auxiliary_model.npz",
+      "split": false,
+      "size_mb": 3.076
+    },
+    "allocate_classifier_model.npz": {
+      "file": "allocate_classifier_model.npz",
+      "split": false,
+      "size_mb": 6.093
+    },
+    "allocate_ranker_model.npz": {
+      "file": "allocate_ranker_model.npz",
+      "split": false,
+      "size_mb": 4.574
+    },
+    "allocate_regressor_model.npz": {
+      "file": "allocate_regressor_model.npz",
+      "split": false,
+      "size_mb": 8.232
+    },
+    "review_auxiliary_model.npz": {
+      "file": "review_auxiliary_model.npz",
+      "split": false,
+      "size_mb": 3.063
+    },
+    "review_classifier_model.npz": {
+      "file": "review_classifier_model.npz",
+      "split": false,
+      "size_mb": 6.111
+    },
+    "review_pass1_classifier_model.npz": {
+      "file": "review_pass1_classifier_model.npz",
+      "split": false,
+      "size_mb": 2.257
+    },
+    "review_pass1_ranker_model.npz": {
+      "file": "review_pass1_ranker_model.npz",
+      "split": false,
+      "size_mb": 2.304
+    },
+    "review_ranker_model.npz": {
+      "file": "review_ranker_model.npz",
+      "split": false,
+      "size_mb": 4.579
+    },
+    "review_regressor_model.npz": {
+      "file": "review_regressor_model.npz",
+      "split": false,
+      "size_mb": 8.262
+    },
+    "site802_allocate_specialist_model.npz": {
+      "file": "site802_allocate_specialist_model.npz",
+      "split": false,
+      "size_mb": 2.287
+    },
+    "site802_review_specialist_model.npz": {
+      "file": "site802_review_specialist_model.npz",
+      "split": false,
+      "size_mb": 2.288
+    }
+  }
+}
